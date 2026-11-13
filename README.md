@@ -21,17 +21,17 @@ A [Pi](https://github.com/earendil-works/pi) extension that syncs LLM model meta
 
 ## Installation
 
-Install as an official Pi package:
+Install as an official Pi package from GitHub:
 
 ```sh
-pi install ~/projects/llm-models
+pi install https://github.com/ak-a-ra/llm-models
 ```
 
 Or add to `~/.pi/agent/settings.json`:
 
 ```json
 {
-  "extensions": ["~/projects/llm-models"]
+  "extensions": ["https://github.com/ak-a-ra/llm-models"]
 }
 ```
 
@@ -42,6 +42,15 @@ Or add to `~/.pi/agent/settings.json`:
 The plugin only writes model IDs it received from the endpoint's `/models` list. models.dev enriches metadata (context window, max output, reasoning, modalities, cost). User customizations (`baseUrl`, `apiKey`) are preserved.
 
 API identifiers are mapped from models.dev / AI SDK provider names to Pi's supported set (e.g. `cohere-chat` → `openai-completions`, `bedrock-converse` → `bedrock-converse-stream`).
+
+### Quick start
+
+```sh
+pi install https://github.com/ak-a-ra/llm-models
+/llm-models update
+/llm-models fetch
+pi reload
+```
 
 ## Schema safety
 
@@ -59,6 +68,15 @@ npm install
 npm run build   # compile TypeScript to dist/
 npm test        # schema regression + live models.json validation
 ```
+
+## Contributing
+
+Bug reports and pull requests welcome on [GitHub](https://github.com/ak-a-ra/llm-models).
+
+1. Fork the repo
+2. Create a branch (`git checkout -b fix/...`)
+3. Make changes, run `npm test`
+4. Open a PR
 
 ## License
 
