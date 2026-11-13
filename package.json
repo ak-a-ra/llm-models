@@ -1,0 +1,29 @@
+{
+  "name": "llm-models",
+  "version": "1.2.0",
+  "description": "Pi extension to fetch and sync model data from models.dev (AI SDK compatible)",
+  "keywords": ["pi-package"],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node test/sanitize.test.mjs && node test/validate-models-json.test.mjs"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "typebox": "^1.3.27",
+    "typescript": "^5.0.0"
+  },
+  "pi": {
+    "extensions": ["./dist/index.js"],
+    "changelogPath": "./CHANGELOG.md"
+  }
+}
